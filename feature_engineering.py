@@ -1,6 +1,13 @@
-def prepare_features(df):
-  features = df[['GrLivArea','BedroomAbvGr','FullBath']]
-  target = df['SalePrice']
+import pandas as pd
 
-  features = features.fillna(features.mean())
-  return features, target
+def preprocess_train_data(df):
+    df = df.fillna(0)
+    features = ['GrLivArea', 'BedroomAbvGr', 'FullBath']
+    X = df[features]
+    y = df['SalePrice']
+    return X, y
+
+def preprocess_test_data(df):
+    df = df.fillna(0)
+    features = ['GrLivArea', 'BedroomAbvGr', 'FullBath']
+    return df[features]

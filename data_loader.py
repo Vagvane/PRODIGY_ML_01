@@ -1,5 +1,7 @@
 import pandas as pd
 
-def load_data(file_path='train.csv'):
-  df= pd.read_csv(file_path)
-  return df
+def load_train_data():
+    return pd.read_csv("train.csv")
+
+def load_test_data():
+    return pd.read_csv("test.csv")

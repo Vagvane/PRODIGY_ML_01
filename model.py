@@ -1,21 +1,21 @@
+import pickle
 from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 
-def train_model(X,y):
-    # Split the data into training and testing sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-    # Create a linear regression model
+def train_model(X, y):
     model = LinearRegression()
-
-    # Fit the model to the training data
-    model.fit(X_train, y_train)
-
-    # Make predictions on the test set
-    predictions = model.predict(X_test)
-
-    # Calculate the mean squared error of the predictions
-    mse = mean_squared_error(y_test, predictions)
-    print(f"Mean Squared Error: {mse:.2f}")
+    model.fit(X, y)
+    with open("linear_model.pkl", "wb") as f:
+        pickle.dump(model, f)
     return model
+
+def evaluate_model(model, X, y):
+    predictions = model.predict(X)
+    mse = mean_squared_error(y, predictions)
+    print(f"Mean Squared Error: {mse}")
+    # Print one sample prediction
+    sample_input = [[1500, 3, 2]]  # Example: 1500 sqft, 3 bedrooms, 2 baths
+    sample_price = model.predict(sample_input)[0]
+    print(f"Predicted price for house with 1500 sqft, 3 beds, 2 baths: ${sample_price:,.2f}")
+    return mse
