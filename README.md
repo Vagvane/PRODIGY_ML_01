@@ -19,10 +19,10 @@ This project predicts house prices using a Linear Regression model based on feat
 - `main.py` – Main controller file
 - `requirements.txt` – Package list
 
-## 🚀 How to Run
+## 🚀 How to Run in VS Code Terminal 
 ```bash
-python -m venv venv
-source venv/bin/activate on Mac/Linux OR venv\Scripts\activate on Windows
-pip install -r requirements.txt
-python main.py
+1. python -m venv venv
+2. source venv/bin/activate on Mac/Linux OR venv\Scripts\activate on Windows
+3. pip install -r requirements.txt
+4. python main.py
 ```
