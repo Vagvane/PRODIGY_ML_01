@@ -25,6 +25,7 @@ This project predicts house prices using a Linear Regression model based on feat
 2. source venv/bin/activate on Mac/Linux OR venv\Scripts\activate on Windows
 3. pip install -r requirements.txt
 4. python main.py
+5. python predict.py
 ```
 ### 📊 Final Output Graph
 
