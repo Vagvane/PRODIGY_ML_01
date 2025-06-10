@@ -19,4 +19,5 @@ def plot_all_features(X, y):
         axs[i].set_title(f"{label} vs House Price")
 
     plt.tight_layout()
+    plt.savefig("output_graphs.png")
     plt.show()
